@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "b4a70100-f951-4b00-806c-68228257b1d9",
+		"name": "Persona Api Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30236956"
+	},
+	"item": [
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 2,\r\n        \"nombre\": \"Lucas\",\r\n        \"apellido\": \"Dominguez\",\r\n        \"dni\": 43424234,\r\n        \"domicilio\": {\r\n            \"id\": 2,\r\n            \"calle\": \"Fleming\",\r\n            \"numero\": 912,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Godoy Cruz\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"fecha\": 1956,\r\n                \"genero\": \"Fantástico\",\r\n                \"titulo\": \"Los Juegos del Hambre\",\r\n                \"paginas\": 727,\r\n                \"autores\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"nombre\": \"Clara Martina\",\r\n                        \"apellido\": \"Arias Lopez\",\r\n                        \"biografia\": \"La mejor\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n}\r\n\r\n\r\n          \r\n       "
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 2,\r\n        \"nombre\": \"Lucas\",\r\n        \"apellido\": \"Dominguez\",\r\n        \"dni\": 43424234,\r\n        \"domicilio\": {\r\n            \"id\": 2,\r\n            \"calle\": \"Fleming\",\r\n            \"numero\": 912,\r\n            \"localidad\": {\r\n                \"id\": 2,\r\n                \"denominacion\": \"Godoy Cruz\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"id\": 2,\r\n                \"titulo\": \"Rick y Morty\",\r\n                \"fecha\": 2002,\r\n                \"genero\": \"Ciencia Ficción\",\r\n                \"paginas\": 277,\r\n                \"autores\": [\r\n                    {\r\n                        \"id\": 2,\r\n                        \"nombre\": \"Clara Martina\",\r\n                        \"apellido\": \"Arias Lopez\",\r\n                        \"biografia\": \"La mejor\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/search?filtro=a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/paged?page=0&size=5&sort=id,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/searchPaged?filtro=Lucas&page=0&size=5&sort=id,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"searchPaged"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "Lucas"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autores",
+			"item": [
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "                        {\r\n                        \"nombre\": \"Clara Martina\",\r\n                        \"apellido\": \"Arias Lopez\",\r\n                        \"biografia\": \"La mejor\"\r\n                        }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/autores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidades",
+			"item": [
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"denominacion\": \"Godoy Cruz\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/localidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
